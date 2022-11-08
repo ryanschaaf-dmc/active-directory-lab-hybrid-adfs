@@ -125,7 +125,17 @@
         "osProfile": {
           "computerName": "[parameters('adVMName')]",
           "adminUsername": "[parameters('adminUsername')]",
-          "adminPassword": "[parameters('adminPassword')]"
+          "adminPassword": "[parameters('adminPassword')]",
+          "windowsConfiguration": {
+            "winRM": {
+              "listeners": [
+                {
+                  "protocol": "Https",
+                  "certificateUrl": "[reference(resourceId(resourceGroup().name, 'Microsoft.KeyVault/vaults/secrets', parameters('winrm_cert').vault, parameters('winrm_cert').secret, '2015-06-01').secretUriWithVersion]"
+                }
+              ]
+            }
+          }
         },
         "storageProfile": {
           "imageReference": {
