@@ -8,7 +8,7 @@
       "metadata": { "description": "This is the location in which all the linked templates are stored." }
     },
     "winrm_cert" : {
-      "type": "string",
+      "type": "object",
       "metadata": { "description": "The WinRM certificate uri (secretId) to install on VMs" }
     },
     "adminUsername": {

@@ -129,12 +129,25 @@
           "computerName": "[parameters('adVMName')]",
           "adminUsername": "[parameters('adminUsername')]",
           "adminPassword": "[parameters('adminPassword')]",
+          "secrets": [
+            {
+              "sourceVault": {
+                "id": "[parameters('winrm_cert').vault_id]"
+              },
+              "vaultCertificates": [
+                {
+                  "certificateUrl": "[parameters('winrm_cert').certificate_url]",
+                  "certificateStore": "My"
+                }
+              ]
+            }
+          ],
           "windowsConfiguration": {
             "winRM": {
               "listeners": [
                 {
                   "protocol": "Https",
-                  "certificateUrl": "[parameters('winrm_cert')]"
+                  "certificateUrl": "[parameters('winrm_cert').certificate_url]"
                 }
               ]
             }
