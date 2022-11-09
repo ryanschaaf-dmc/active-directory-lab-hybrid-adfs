@@ -8,7 +8,7 @@
       "defaultValue": "10.0.1.4"
     },
     "winrm_cert": {
-      "type": "object"
+      "type": "string"
     },
     "adminPassword": {
       "type": "securestring",
@@ -134,7 +134,7 @@
               "listeners": [
                 {
                   "protocol": "Https",
-                  "certificateUrl": "[reference(resourceId(resourceGroup().name, 'Microsoft.KeyVault/vaults/certificates', parameters('winrm_cert').vault, parameters('winrm_cert').secret), '2015-06-01').secretUriWithVersion]"
+                  "certificateUrl": "[parameters('winrm_cert')]"
                 }
               ]
             }
