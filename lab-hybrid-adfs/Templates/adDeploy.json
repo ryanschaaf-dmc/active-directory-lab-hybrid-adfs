@@ -134,7 +134,7 @@
               "listeners": [
                 {
                   "protocol": "Https",
-                  "certificateUrl": "[reference(resourceId(resourceGroup().name, 'Microsoft.KeyVault/vaults/secrets', parameters('winrm_cert').vault, parameters('winrm_cert').secret, '2015-06-01').secretUriWithVersion]"
+                  "certificateUrl": "[reference(resourceId(resourceGroup().name, 'Microsoft.KeyVault/vaults/secrets', parameters('winrm_cert').vault, parameters('winrm_cert').secret, '2015-06-01').secretUriWithVersion)]"
                 }
               ]
             }

@@ -221,6 +221,7 @@
         "mode": "Incremental",
         "templateLink": { "uri": "[variables('adTemplateURI')]" },
         "parameters": {
+          "winrm_cert": { "value": "[parameters('winrm_cert')]" },
           "adIP": { "value": "[parameters('adIP')]" },
           "adminPassword": { "value": "[parameters('adminPassword')]" },
           "adminUsername": { "value": "[parameters('adminUsername')]" },
